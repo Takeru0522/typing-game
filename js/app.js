@@ -186,3 +186,22 @@ $('#test').on('click', () => {
 
 
 
+const array = ['cat', 'dog', 'bird'];
+
+const wordArray = array[0].split('');
+console.log(wordArray);
+
+
+const words = document.querySelector('.words');
+
+for(let i=0; i < wordArray.length; i++){
+  let span = document.createElement('span');
+  span.classList.add('span');
+  span.innerHTML = wordArray[i];
+  words.append('span');
+}
+let $spans = $('.span');
+console.log($spans);
+
+
+
