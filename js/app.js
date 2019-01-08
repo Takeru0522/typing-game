@@ -130,12 +130,12 @@ function typing(e) {
         // words.classList.add("fadeOut");
         // points++; // increment the points
         // scoreDiv.innerHTML = points; //add points to the points div
-        $(document).off("keydown", typing, false);
+        $(document).off("keypress", typing);
         
         setTimeout(function(){
           words.className = "words"; // restart the classes
           random(); // give another word
-          $(document).on("keydown", typing, false);
+          $(document).on("keypress", typing);
         }, 400);
 
       }
