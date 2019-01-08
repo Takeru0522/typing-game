@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<title>Typing Game</title>
+</head>
+<body>
+	<header>
+		<h1>Typing Game</h1>	
+		<nav>
+			<a href="about.html">About</a>
+			<a href="">How to play</a>
+			<a href="">Your status</a>
+		</nav>	
+	</header>
+
+	<main>
+		<div class="contents-wrapper">
+			<div class="contents-inner-wrapper">
+				<h2>Practice</h2>
+				<div class="contents">
+					<div class="open-game">Easy</div>
+					<div class="open-game">Normal</div>
+					<div class="open-game">Hard</div>
+					<div class="open-game">Very Hard</div>
+				</div>
+			</div>
+
+			<div class="contents-inner-wrapper">
+				<h2>Test</h2>
+				<div class="contents">
+					<div class="open-game">Easy</div>
+					<div class="open-game">Normal</div>
+					<div class="open-game">Hard</div>
+					<div class="open-game">Very Hard</div>
+				</div>
+			</div>
+			<div class="game-modal remove">
+				<div class="game-modal-inner">
+					<div class="before-game remove">
+						<p><span id="close-before-game" class="fas fa-times"></span></p>
+						<p>Practice - Easy</p> <!-- chosen level -->
+						<img src="https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png">
+						<p>User Name : </p>
+						<p>User Level : </p>
+						<p>Exp.</p>
+						<button id="before-btn">Start</button>
+					</div>
+
+					<div class="game remove">
+						<p><span id="close-game" class="fas fa-times"></span></p>
+						<p class="monster-name">Monster: </p>
+						<p>HP : </p>
+						<img src="https://iso-labo.com/labo/images/dragon_quest/dq1/01_suraimu.gif">
+						<p>"Word to type"</p>
+						<p>User Name</p>
+						<p>HP : </p>
+						<button id="game-btn">See Result</button>
+					</div>
+
+					<div class="after-game remove">
+						<p><span id="close-after-game" class="fas fa-times"></span></p>
+						<div class="result-box"> <!-- result Box -->
+							<p>Result</p>
+							<img src="https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png">
+							<div class="result-textarea">
+								<p>Score : </p>
+								<p>Exp. </p>
+							</div>
+							<button id="after-btn">Close</button>
+						</div>					
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</main>
+
+	<footer>
+		<div class="footer-link">
+			<ul>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+				<li><a href=""></a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<p id="test">Test</p>
+
+
+
+
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>

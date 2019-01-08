@@ -1,0 +1,136 @@
+
+
+body {
+	height: auto;
+	margin: 0 auto;
+	font-family: 'Press Start 2P', cursive;
+}
+
+
+header {
+	background-color: coral;
+	height: auto;
+
+}
+
+h1 {
+	text-align: center;
+}
+
+/*main {
+	background-color: #74b6cc;
+	height: 70vh;
+
+}*/
+
+.contents-wrapper {
+	background-color: #cdedf7; /*light blue*/
+	height: auto;
+	width: auto;
+
+}
+
+.contents-inner-wrapper {
+	background-color: #F4CDF7; /*pink*/ 
+	height: auto;
+	width: 90vw;
+	margin: 0 auto;
+}
+
+h2 {
+	border-bottom: 1px solid grey;
+	width: auto;
+}
+
+
+
+.contents {
+	background-color: #F6F7CD;  /*yellow*/
+	height: 40vh;
+	width: 90vw;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.contents div {
+	margin-top: 10px;
+	height: 100px;
+	width: 40%;
+	border: 1px solid grey;
+
+}
+
+.game-modal {
+	background-color: #75716B;
+	height: 80vh;
+	width: 100vw;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	top: -100vh;
+
+}
+
+.remove {
+	display: none;
+}
+
+.game-modal-inner {
+	background-color: black;
+	border: 1px solid black;
+	color: white;
+	height: 80vh;
+	width: 60vw;
+}
+
+.game-modal-inner, .before-game, .game, .after-game {
+	background-color: black;
+	border: 1px solid white;
+	color: white;
+	height: 80vh;
+	width: 60vw;
+	/*position: absolute;	*/ 
+}
+
+.before-game {
+
+}
+
+.game-modal-inner img {
+	margin: 103px;
+}
+
+.game {
+
+}
+
+.after-game {
+
+}
+
+.game-modal span {
+	font-size: 14px;
+	float: right;
+	padding-right: 15px;
+	padding-top: -10px;
+}
+
+
+
+
+footer {
+	width: auto;
+	height: 30vh;
+	background-color: #FAC273;
+}
+
+
+#test {
+
+}
+
+
+
