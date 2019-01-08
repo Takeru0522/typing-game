@@ -2,16 +2,9 @@ console.log('Hello')
 
 const wordsList = ['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf'];
 let spans;
+let typed;
 const words = $('.words');
-// const $body = $('body')
-// $body.on('keypress', (e) => {
-//     const $typed = String.fromCharCode(e.which);
-//     console.log($typed);
 
-//     if($typed === wordsList[0]){
-//       console.log('You typed a');
-//     }
-//   });
 let userHp, enemyHp, exp;
 let level = 1;
 
@@ -36,7 +29,7 @@ function setTimer() {
 // setTimer();
 
 
-$('#before-btn').on('click', random);
+
 
 function random() {
 	words.html('');
@@ -52,57 +45,151 @@ function random() {
 		words.append(span);
 	}
 	spans = $('.span');
+	console.log(spans);
 }
 // random();
 
 
 
 
+$('#before-btn').on('click', (e) => {
+	setTimer();
+	random();
+	// type();
+});
 
+// button.addEventListener("click", function(e){
+//   countdown();
+//   random();
+//   button.disabled = true;      // 1
+// });
 
-
-
-
-// function typing(e) {
+// const $body = $('body')
+// $body.on('keypress', (e) => {
 //     typed = String.fromCharCode(e.which);
-//     for (var i = 0; i < spans.length; i++) {
-//       if (spans[i].innerHTML === typed) { // if typed letter is the one from the word
-//         if (spans[i].classList.contains("bg")) { // if it already has class with the bacground color then check the next one
-//            continue;
-//         } else if (spans[i].classList.contains("bg") === false && spans[i-1] === undefined || spans[i-1].classList.contains("bg") !== false ) { // if it dont have class, if it is not first letter or if the letter before it dont have class (this is done to avoid marking the letters who are not in order for being checked, for example if you have two "A"s so to avoid marking both of them if the first one is at the index 0 and second at index 5 for example)
-//           spans[i].classList.add("bg");
-//           break;
-//         }
-//       }
+//     console.log(typed);
+
+//     if(typed === spans[0]){
+//       console.log('You typed something');
 //     }
-//     var checker = 0;
-//     for (var j = 0; j < spans.length; j++) { //checking if all the letters are typed
-//       if (spans[j].className === "span bg") {
-//         checker++;
-//       }
-//       // after one word
-//       if (checker === spans.length) { // if so, animate the words with animate.css class
-//         spark.pause();
-//         spark.currentTime = 0;
-//         spark.play();
-//         words.classList.add("animated");
-//         words.classList.add("fadeOut");
-//         points++; // increment the points
-//         scoreDiv.innerHTML = points; //add points to the points div
-//         document.removeEventListener("keydown", typing, false);
+//   });
+
+
+function typing(e) {
+	console.log('typing is working')
+	console.log(e.which)
+    typed = String.fromCharCode(e.which);
+    // console.log(typed); // ok
+    // console.log(spans);
+    console.log(spans[0]); // => <span class="span">g</span>
+    console.log('innerHTML : ' + spans[0].innerHTML); // => e
+    console.log('html : ' + spans[0].html); // => undefined
+    console.log(typed);
+    console.log('length : ' + spans.length);
+
+    for (let i = 0; i < spans.length; i++) {
+    	if (spans[i].innerHTML == typed) { // if typed letter is the one from the word
+    		if (spans[i].classList.contains("bg")) {
+    			continue;
+    		} else if (spans[i].classList.contains("bg") === false && spans[i-1] === undefined || spans[i-1].classList.contains("bg") !== false ) {
+    			spans[i].classList.add("bg");
+    			break;
+    		}
+    	}
+    }
+
+// if it dont have class, if it is not first letter or if the letter before it dont have class (this is done to avoid marking the letters who are not in order for being checked, 
+// for example if you have two "A"s so to avoid marking both of them if the first one is at the index 0 and second at index 5 for example)
+ 
+    ////
+    // for (var i = 0; i < spans.length; i++) {
+    //   if (spans[i].innerHTML === typed) { // if typed letter is the one from the word
+    //     if (spans[i].classList.contains("bg")) { // if it already has class with the bacground color then check the next one
+    //        continue;
+    //     } else if (spans[i].classList.contains("bg") === false && spans[i-1] === undefined || spans[i-1].classList.contains("bg") !== false ) { // if it dont have class, if it is not first letter or if the letter before it dont have class (this is done to avoid marking the letters who are not in order for being checked, for example if you have two "A"s so to avoid marking both of them if the first one is at the index 0 and second at index 5 for example)
+    //       spans[i].classList.add("bg");
+    //       break;
+    //     }
+    //   }
+    // }
+
+    ///
+    
+    let checker = 0;
+    for (let j = 0; j < spans.length; j++) { //checking if all the letters are typed
+      if (spans[j].className === "span bg") {
+        checker++;
+        console.log(checker);
+      }  
+      // after one word   // replaced 'spans' to 'wordArray'
+      if (checker === spans.length) { // if so, animate the words with animate.css class
+        // spark.pause();
+        // spark.currentTime = 0;
+        // spark.play();
+        // words.classList.add("animated");
+        // words.classList.add("fadeOut");
+        // points++; // increment the points
+        // scoreDiv.innerHTML = points; //add points to the points div
+        $(document).off("keydown", typing, false);
         
-//         setTimeout(function(){
-//           words.className = "words"; // restart the classes
-//           random(); // give another word
-//           document.addEventListener("keydown", typing, false);
-//         }, 400);
+        setTimeout(function(){
+          words.className = "words"; // restart the classes
+          random(); // give another word
+          $(document).on("keydown", typing, false);
+        }, 400);
 
-//       }
+      }
 
-//     }
-// }
+    }
+}
 
-// document.addEventListener("keydown", typing, false);
+$(document).on('keypress', typing);
+
+
+
+/////////////////////////////////////
+
+/*
+function typing(e) {
+    typed = String.fromCharCode(e.which);
+    // for (var i = 0; i < spans.length; i++) {
+    //   if (spans[i].innerHTML === typed) { // if typed letter is the one from the word
+    //     if (spans[i].classList.contains("bg")) { // if it already has class with the bacground color then check the next one
+    //        continue;
+    //     } else if (spans[i].classList.contains("bg") === false && spans[i-1] === undefined || spans[i-1].classList.contains("bg") !== false ) { // if it dont have class, if it is not first letter or if the letter before it dont have class (this is done to avoid marking the letters who are not in order for being checked, for example if you have two "A"s so to avoid marking both of them if the first one is at the index 0 and second at index 5 for example)
+    //       spans[i].classList.add("bg");
+    //       break;
+    //     }
+    //   }
+    // }
+    var checker = 0;
+    for (var j = 0; j < spans.length; j++) { //checking if all the letters are typed
+      if (spans[j].className === "span bg") {
+        checker++;
+      }
+      // after one word
+      if (checker === spans.length) { // if so, animate the words with animate.css class
+        spark.pause();
+        spark.currentTime = 0;
+        spark.play();
+        words.classList.add("animated");
+        words.classList.add("fadeOut");
+        points++; // increment the points
+        scoreDiv.innerHTML = points; //add points to the points div
+        document.removeEventListener("keydown", typing, false);
+        
+        setTimeout(function(){
+          words.className = "words"; // restart the classes
+          random(); // give another word
+          document.addEventListener("keydown", typing, false);
+        }, 400);
+
+      }
+
+    }
+}
+*/
+
 
 /*
 
