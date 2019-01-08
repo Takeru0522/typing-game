@@ -1,8 +1,8 @@
 console.log('Hello')
 
-const wordsList = ['apple', 'bee', 'chick', 'delta', 'echo', 'fox', 'golf'];
-
-
+const wordsList = ['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf'];
+let spans;
+const words = $('.words');
 // const $body = $('body')
 // $body.on('keypress', (e) => {
 //     const $typed = String.fromCharCode(e.which);
@@ -12,9 +12,99 @@ const wordsList = ['apple', 'bee', 'chick', 'delta', 'echo', 'fox', 'golf'];
 //       console.log('You typed a');
 //     }
 //   });
+let userHp, enemyHp, exp;
+let level = 1;
+
+userHp = 100 
+enemyHp = 100
+
+
+// enemy attacks every 2s until a user dies. 
+function setTimer() {
+	const startGame = setInterval(function() {
+		userHp-= 10; // 
+		console.log(userHp);
+		if(userHp === 0){
+			clearInterval(startGame);
+			console.log('You win');
+
+			// userHp = //
+			// exp += //
+		}
+	}, 2000);
+}
+// setTimer();
+
+
+$('#before-btn').on('click', random);
+
+function random() {
+	words.html('');
+	let random = Math.floor(Math.random() * 7);
+	// console.log(random)
+	const wordArray = wordsList[random].split(''); // wordArray = ['a', 'l', 'p', 'h', 'a']
+	console.log(wordArray)
+	for(let i = 0; i < wordArray.length; i++){
+		const span = $('<span/>');
+		span.addClass('span');
+		span.html(wordArray[i]);
+		console.log(wordArray[i]);
+		words.append(span);
+	}
+	spans = $('.span');
+}
+// random();
 
 
 
+
+
+
+
+
+
+// function typing(e) {
+//     typed = String.fromCharCode(e.which);
+//     for (var i = 0; i < spans.length; i++) {
+//       if (spans[i].innerHTML === typed) { // if typed letter is the one from the word
+//         if (spans[i].classList.contains("bg")) { // if it already has class with the bacground color then check the next one
+//            continue;
+//         } else if (spans[i].classList.contains("bg") === false && spans[i-1] === undefined || spans[i-1].classList.contains("bg") !== false ) { // if it dont have class, if it is not first letter or if the letter before it dont have class (this is done to avoid marking the letters who are not in order for being checked, for example if you have two "A"s so to avoid marking both of them if the first one is at the index 0 and second at index 5 for example)
+//           spans[i].classList.add("bg");
+//           break;
+//         }
+//       }
+//     }
+//     var checker = 0;
+//     for (var j = 0; j < spans.length; j++) { //checking if all the letters are typed
+//       if (spans[j].className === "span bg") {
+//         checker++;
+//       }
+//       // after one word
+//       if (checker === spans.length) { // if so, animate the words with animate.css class
+//         spark.pause();
+//         spark.currentTime = 0;
+//         spark.play();
+//         words.classList.add("animated");
+//         words.classList.add("fadeOut");
+//         points++; // increment the points
+//         scoreDiv.innerHTML = points; //add points to the points div
+//         document.removeEventListener("keydown", typing, false);
+        
+//         setTimeout(function(){
+//           words.className = "words"; // restart the classes
+//           random(); // give another word
+//           document.addEventListener("keydown", typing, false);
+//         }, 400);
+
+//       }
+
+//     }
+// }
+
+// document.addEventListener("keydown", typing, false);
+
+/*
 
 let userHp = 100 
 let enemyHp = 100
@@ -103,20 +193,8 @@ $('#before-btn').on('click', () => {
 
 
 
-// const arry = ['apple', 'bee'];
 
-// const letter = arry[0].split('');
-
-// console.log(letter);
-
-// for(let i = 0; i < letter.length; i++){
-//   console.log(letter[i]);
-// }
-
-
-
-
-
+*/
 
 
 
@@ -185,23 +263,6 @@ $('#test').on('click', () => {
 })
 
 
-
-const array = ['cat', 'dog', 'bird'];
-
-const wordArray = array[0].split('');
-console.log(wordArray);
-
-
-const words = document.querySelector('.words');
-
-for(let i=0; i < wordArray.length; i++){
-  let span = document.createElement('span');
-  span.classList.add('span');
-  span.innerHTML = wordArray[i];
-  words.append('span');
-}
-let $spans = $('.span');
-console.log($spans);
 
 
 

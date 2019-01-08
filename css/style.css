@@ -88,7 +88,7 @@ h2 {
 
 .game-modal-inner, .before-game, .game, .after-game {
 	background-color: black;
-	border: 1px solid white;
+	/*border: 1px solid white;*/
 	color: white;
 	height: 80vh;
 	width: 60vw;
@@ -107,16 +107,21 @@ h2 {
 
 }
 
+.words {
+	font-size: 50px;
+}
+
 .after-game {
 
 }
 
-.game-modal span {
+.fas {
 	font-size: 14px;
 	float: right;
 	padding-right: 15px;
 	padding-top: -10px;
 }
+
 
 
 
