@@ -1,4 +1,8 @@
 
+1. error when user types before start game
+
+
+
 
 Level 1
 HP: 100
@@ -112,8 +116,28 @@ random();
 
 
 
+User - name, HP, attack, img, Exp (having)
+
+class user
+const level2 = new user
+
+name = null
+HP = ++
+attack = ++
+img = 
+Exp = ++
+
+if(level === 2){
+	user = level2;
+}
 
 
+Monsters - name, HP, attack, img, Exp (giving)
+name =
+HP = ++
+attack = ++
+img =
+Exp = ++
 
 
 

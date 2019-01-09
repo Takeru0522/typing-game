@@ -117,7 +117,9 @@ h2 {
 	background-color: #04AF71;
 }
 
-.
+#game-btn {
+	visibility: hidden;
+}
 
 .after-game {
 
