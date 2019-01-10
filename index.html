@@ -20,16 +20,70 @@
 	<main>
 		<div class="contents-wrapper">
 			<div class="contents-inner-wrapper">
+				<div class="profile-wrapper">
+					<div class="profile">
+
+						<div class="first-page">  <!-- if(user Name = null) {display this} -->
+							<form>
+								<input id="inputName"type="text" name="userName" placeholder="user name">
+								<input type="submit" id="submit-btn">
+							</form>							
+						</div>
+
+						<div class="second-page remove">
+							<div class="second-wrapper">
+								
+								<p id="userName">Name</p>
+								<div class="image-area">
+									<img src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_001.png">
+								</div>
+								<div class="info-area">
+									<p id="statusLevel">Level.1</p>
+									
+									<p id="statusAttack">Attack:</p>
+									<p>HP</p>
+									<p>Exp.</p>
+
+									<div class="hp-bar-wrapper">
+										<div class="hp-wrap">
+											
+											<div class="hp-outer"></div>
+											<div class="hp-inner"></div>
+										</div>
+									</div>
+
+									<div class="exp-bar-wrapper">
+										<div class="exp-wrap">
+											<div class="exp-outer"></div>
+											<div class="exp-inner"></div>			
+										</div>	
+									</div>
+
+								</div>								
+							</div>
+
+
+						</div>
+
+					</div>
+				</div>
+
 				<h2>Practice</h2>
 				<div class="contents">
-					<div class="open-game">Easy</div>
-					<div class="open-game">Normal</div>
-					<div class="open-game">Hard</div>
-					<div class="open-game">Very Hard</div>
+					<div class="open-game" id="one">1</div>
+					<div class="open-game" id="two">2</div>
+					<div class="open-game" id="three">3</div> <!-- Boss 1 -->
+					<div class="open-game" id="four">4</div>
+					<div class="open-game" id="five">5</div>
+					<div class="open-game" id="six">6</div> <!-- Boss 2 -->
+					<div class="open-game" id="seven">7</div>
+					<div class="open-game" id="eight">8</div>
+					<div class="open-game" id="nine">9</div> <!-- Boss 3 -->
+					<div class="open-game" id="ten">10</div> <!-- Final Boss -->
 				</div>
 			</div>
 
-			<div class="contents-inner-wrapper">
+<!-- 			<div class="contents-inner-wrapper">
 				<h2>Test</h2>
 				<div class="contents">
 					<div class="open-game">Easy</div>
@@ -37,14 +91,16 @@
 					<div class="open-game">Hard</div>
 					<div class="open-game">Very Hard</div>
 				</div>
-			</div>
+			</div> -->
+
+
 			<div class="game-modal remove">
 				<div class="game-modal-inner">
 					<div class="before-game remove">
 						<p><span id="close-before-game" class="fas fa-times"></span></p>
 						<p>Practice - Easy</p> <!-- chosen level -->
 						<img src="https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png">
-						<p>User Name : </p>
+						<p id="userName2">User Name : </p>
 						<p>User Level : </p>
 						<p>Exp.</p>
 						<button id="before-btn">Start</button>
@@ -52,12 +108,13 @@
 
 					<div class="game remove">
 						<p><span id="close-game" class="fas fa-times"></span></p>
-						<p class="monster-name">Monster: </p>
-						<p>HP : </p>
-						<img src="https://iso-labo.com/labo/images/dragon_quest/dq1/01_suraimu.gif">
+						<p id="monsterName">Monster</p>
+						<p>HP</p>
+						<img id="monsterImg">
 						<div class="words">"Word to type"</div>
-						<p>User Name</p>
-						<p>HP : </p>
+						<p id="userName3">User Name</p>
+						<p>HP</p>
+						<p>Exp</p>
 						<button id="game-btn">See Result</button>
 					</div>
 
@@ -96,10 +153,7 @@
 	</footer>
 
 
-	<form>
-		<input id="inputName"type="text" name="userName" placeholder="user name">
-		<input type="submit" id="submit-btn">
-	</form>
+
 	
 	
 	

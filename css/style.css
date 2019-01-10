@@ -17,6 +17,9 @@ h1 {
 	text-align: center;
 }
 
+.display {
+	display: none;
+}
 /*main {
 	background-color: #74b6cc;
 	height: 70vh;
@@ -42,22 +45,150 @@ h2 {
 	width: auto;
 }
 
+.profile-wrapper {
+	background-color: #75716B;
+	margin: 0 auto;
+	height: 30vh;
+	width: 30vw;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+.profile {
+	
+	height: auto;
+	width: 30vw;
+
+}
+
+.first-page {
+	/*display: none;*/
+	/*background-color: yellow;*/
+	height: 30vh;
+}
+
+.second-page {
+	background-color: yellow;
+	height: 30vh;
+	line-height: 7px;
+}
+.second-page img {
+	padding: 7px;
+}
+.second-wrapper {
+	background-color: white;
+	height: 100%;
+
+}
+
+#userName {
+	margin-top: 0px;
+	padding-top: 25px;
+}
+
+.info-area {
+	text-align: left;
+	padding-left: 10px;
+}
+
+/*
+
+									<div class="hp-bar-wrapper">
+										<div class="hp-outer">
+											<div class="hp-inner"></div>
+										</div>
+									</div>
+									<div class="exp-bar-wrapper">
+										<div class="exp-outer">
+											<div class="exp-inner"></div>
+										</div>
+									</div>
+*/
+.hp-bar-wrapper, .exp-bar-wrapper {
+	height: 10px;
+	width: 120px;
+	border: 1px solid black;
+	position: relative;
+	left: 64px;
+}
+.hp-bar-wrapper {
+	top: -50px;
+}
+
+.hp-wrap, .exp-wrap {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+.hp-wrap {
+
+}
+
+.exp-wrap {
+
+}
+
+.hp-outer, .exp-outer {
+	/*border: 1px solid pink;*/
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	/*border: 1px solid black;*/
+}
+
+.hp-outer {
+
+}
+
+.hp-inner {
+	height: 100%;
+	width: 100%;
+	background-color: #C72424;
+	position: absolute;
+}
+
+.exp-bar-wrapper {
+	top: -39px;
+}
+
+.exp-wrap {
+
+}
+
+.exp-outer {
+
+}
+
+.exp-inner {
+	height: 100%;
+	width: 0%;
+	background-color: #2455C7;
+	position: absolute;
+}
+
+
+
+
+
+
 
 
 .contents {
 	background-color: #F6F7CD;  /*yellow*/
-	height: 40vh;
+	height: 82vh;
 	width: 90vw;
 	margin: 0 auto;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	flex-wrap: wrap;
 }
 
 .contents div {
-	margin-top: 10px;
+	margin: 15px;
 	height: 100px;
-	width: 40%;
+	width: 25%;
 	border: 1px solid grey;
 
 }
@@ -103,8 +234,14 @@ h2 {
 	margin: 103px;
 }
 
-.game {
+.game p {
+	text-align: left;
+	padding-left: 10px;
+}
 
+#monsterImg {
+	height: 70px;
+	width: 70px;
 }
 
 .words {

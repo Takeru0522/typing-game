@@ -1,13 +1,13 @@
 console.log('Hello')
-let enemyHp = 100
+let enemyHp;
 const wordsList = ['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf'];
 let spans;
 let typed;
 const words = $('.words');
 const game = $('.game');
 // let userHp, enemyHp, exp;
-let exp = 0;
-
+let exp = 700;
+let userName = null;
 // let level = 1;
 const gameBtn = $('#game-btn');
 
@@ -20,6 +20,7 @@ for(let n = 0; n < 10; n++){
   // console.log(gap);
   numArray.push(gap); 
 }
+console.log(numArray);
 
 let eachExp = 0;
 const expArray = [];
@@ -31,6 +32,7 @@ for(let i = 0; i < numArray.length; i++){
 }
 console.log(expArray);
 ////////////////////
+
 ////////////////////////////////////////////////////
 
 
@@ -67,7 +69,7 @@ const level15 = new User(15, 15000, 1500, '');
 
 // console.log(level2);
 // console.log(level1.level);
-let currentUser = level1;
+let currentUser = level1;  // you need to change Exp if you want to change Level
 
 if(exp >= 0 && exp < expArray[0]){ // 0 <= exp < 100 ... level 1
 	currentUser = level1
@@ -101,22 +103,102 @@ if(exp >= 0 && exp < expArray[0]){ // 0 <= exp < 100 ... level 1
 	currentUser = level15;
 }
 
-
-
-
-
 console.log(currentUser, ' current');
 console.log(currentUser.hp);
+
+
+// Define something related to User class
+userHp = currentUser.hp;
+$('#statusLevel').text(`Level.${currentUser.level}`);
+$('#statusAttack').text(`Attack:${currentUser.attack}`);
+
 
 
 class Monster extends User {
 	constructor(level, hp, attack, img, expMonster, name){
 		super(level, hp, attack, img)
-		this.name = name
-		this.expMonster = expMonster
+		this.name = name;
+		this.expMonster = expMonster;
 	}
 };
 
+const slime = new Monster(1, 1000, 100, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_001.png', expArray[0], 'slime');
+const killerPanther = new Monster(2, 2000, 200, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_075.png', expArray[1], 'killerPanther');
+const kandata = new Monster(3, 3000, 300, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_200.png', expArray[2], 'kandata'); // Boss1
+const golem = new Monster(4, 4000, 400, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_123.png', expArray[3], 'golem');
+const akumaShinkan = new Monster(5, 5000, 500, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_155.png', expArray[4], 'akumaShinkan');
+const milledEarth = new Monster(6, 6000, 600, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_209.png', expArray[5], 'milledEarth'); // Boss2
+const killerMachine = new Monster(7, 7000, 700, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_164.png', expArray[6], 'killerMachine');
+const gigantes = new Monster(8, 8000, 800, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_169.png', expArray[7], 'gigantes');
+const milledEarthX = new Monster(9, 9000, 900, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_210.png', expArray[8], 'milledEarthX'); // Boss3
+const ryuoh = new Monster(10, 10000, 1000, 'https://iso-labo.com/labo/images/dragon_quest/boss/1-1_boss.png', expArray[9], 'ryuoh');
+// https://iso-labo.com/labo/images/dragon_quest/boss/1-2_boss.png // transformed
+// final Boss
+let currentMonster = slime;
+
+$('#one').on('click', () => {
+	currentMonster = slime;
+	// $('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', currentMonster.img);
+})
+
+$('#two').on('click', () => {
+	currentMonster = killerPanther;
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', killerPanther.img);
+})
+
+$('#three').on('click', () => {
+	currentMonster = kandata;
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', currentMonster.img);
+})
+
+$('#four').on('click', () => {
+	currentMonster = golem;
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', currentMonster.img);
+})
+
+$('#five').on('click', () => {
+	currentMonster = akumaShinkan;
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', currentMonster.img);
+})
+
+$('#six').on('click', () => {
+	currentMonster = milledEarth;
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', currentMonster.img);
+})
+
+$('#seven').on('click', () => {
+	currentMonster = killerMachine;
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', currentMonster.img);
+})
+
+$('#eight').on('click', () => {
+	currentMonster = gigantes;
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', currentMonster.img);
+})
+
+$('#nine').on('click', () => {
+	currentMonster = milledEarthX;
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', currentMonster.img);
+})
+
+$('#ten').on('click', () => {
+	currentMonster = ryuoh;
+	$('#monsterName').text(`<${currentMonster.name}>`);
+	$('#monsterImg').attr('src', currentMonster.img);
+})
+
+
+/*
 const slime = new Monster(1, 1000, 100, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_001.png', expArray[0], 'slime');
 const killerPanther = new Monster(2, 2000, 200, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_075.png', expArray[1]);
 const kandata = new Monster(3, 3000, 300, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_200.png', expArray[2]); // Boss1
@@ -126,28 +208,75 @@ const milledEarth = new Monster(6, 6000, 600, 'https://iso-labo.com/labo/images/
 const killerMachine = new Monster(7, 7000, 700, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_164.png', expArray[6]);
 const gigantes = new Monster(8, 8000, 800, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_169.png', expArray[7]);
 const milledEarthX = new Monster(9, 9000, 900, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_210.png', expArray[8]); // Boss3
-const ryuoh = new Monster(10, 10000, 1000, 'https://iso-labo.com/labo/images/dragon_quest/boss/1-1_boss.png', expArray[9]);
-// https://iso-labo.com/labo/images/dragon_quest/boss/1-2_boss.png // transformed
-// final Boss
-console.log(slime.name);
+const ryuoh = new Monster(10, 10000, 1000, 'https://iso-labo.com/labo/images/dragon_quest/boss/1-1_boss.png', expArray[9]); // Final
+// https://iso-labo.com/labo/images/dragon_quest/boss/1-2_boss.png
+*/
 
+
+
+
+
+
+console.log(slime.name);
+console.log('slime level : ', slime.level);
 ////////////////////////////////
 
+enemyHp = currentMonster.hp;
 
 
 
-userHp = currentUser.hp;
+let newName;
+const changeName = (e) => {
+	e.preventDefault();
+	const newName = $("input[name='userName']").val();
+	console.log(newName, ': This is name');
+	$("input[name='newName']").val('');
+	$('#userName').text(`<${newName}>`);
+	$('#userName2').text(`<${newName}>`);
+	$('#userName3').text(`<${newName}>`);
+
+} 
+$('form').on('submit', changeName)
+
+// if(userName === null){
+
+// }
+$('#submit-btn').on('click', () => {
+	$('.first-page').toggleClass('remove');
+	$('.second-page').toggleClass('remove');
+	console.log('userName', userName);
+	console.log('newName', newName)
+})
 
 
+
+// only if user level >= 3
+let num1 = exp - expArray[currentUser.level - 2]; 
+// console.log('level : ',currentUser.level); // 4
+// console.log('exp : ', exp) //500
+
+// console.log('475 : ', expArray[currentUser.level - 2]);
+// console.log(num1); //25
+
+let num2 = expArray[currentUser.level-1] - expArray[currentUser.level-2];
+// console.log('812.5 : ', expArray[currentUser.level-1]) //
+// console.log('475 : ', expArray[currentUser.level-2]) //
+// console.log(num2);
+
+let num3 = num1 / num2;
+let expBar = Math.floor(num3 * 100);
+console.log(expBar); // 7
+
+$('.exp-inner').css('width', `${expBar}%`);
 
 // enemy attacks every 2s until a user dies. 
 function setTimer() {
 	const startGame = setInterval(function() {
-		userHp-= akumaShinkan.attack; // 
+		userHp-= currentMonster.attack; // 
 		console.log('User HP : ' + userHp);
 		if(userHp <= 0){
 			clearInterval(startGame);
-			console.log('You win');
+			console.log('You lose.');
 			userHp = currentUser.hp; // reset HP
 			gameBtn.css('visibility', 'visible');
 			console.log('healed HP', userHp);
@@ -161,6 +290,7 @@ function setTimer() {
 		}
 		if(game.hasClass('remove')){
 			clearInterval(startGame);
+			userHp = currentUser.hp;
 			console.log('The battle is closed.');
 		}
 	}, 2000);
@@ -242,7 +372,7 @@ function typing(e) {
         // words.classList.add("fadeOut");
         // points++; // increment the points
         // scoreDiv.innerHTML = points; //add points to the points div
-        enemyHp -= 20;
+        enemyHp -= currentUser.attack;
     	console.log('Enemy HP : ' + enemyHp);
 
         $(document).off("keypress", typing);
@@ -269,11 +399,32 @@ $('.open-game').on('click', () => {
 	$('.before-game').toggleClass('remove'); //  + before-game modal
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $('#before-btn').on('click', () => {
 	$('.before-game').toggleClass('remove'); //  - before-game
 	$('.game').toggleClass('remove'); //  + game
-
 })
+
+
+
+
 
 $('#game-btn').on('click', () => {
 	$('.game').toggleClass('remove'); //  - game
@@ -322,17 +473,12 @@ $('#close-after-game').on('click', () => {
 
 
 
-const changeName = (e) => {
-	e.preventDefault();
-	const newName = $("input[name='userName']").val();
-	console.log(newName, ': This is name');
-	$('.testDiv').text(`New name is "${newName}"`);
-	$("input[name='newName']").val('');
-	return newName;
-}
-$('form').on('submit', changeName)
-
-
+// $('#nameBtn').on('click', () => {
+// 	const newName = $("#inputName").val();
+// 	console.log(newName);
+// 	User.name = newName;
+// 	console.log(User.name);
+// })
 
 
 
@@ -357,12 +503,6 @@ $('form').on('submit', changeName)
 
 // nameFunction();
 
-$('#nameBtn').on('click', () => {
-	const newName = $("#inputName").val();
-	console.log(newName);
-	User.name = newName;
-	console.log(User.name);
-})
 
 
 
