@@ -1,6 +1,6 @@
-console.log('Hello')
+
 let enemyHp;
-const wordsList = ['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf'];
+const wordsList = ['aaa', 'bbb', 'ccc', 'ddd', 'eee', 'fff', 'ggg'];
 let spans;
 let typed;
 const words = $('.words');
@@ -20,7 +20,7 @@ for(let n = 0; n < 10; n++){
   // console.log(gap);
   numArray.push(gap); 
 }
-console.log(numArray);
+// console.log(numArray);
 
 let eachExp = 0;
 const expArray = [];
@@ -30,10 +30,11 @@ for(let i = 0; i < numArray.length; i++){
   // console.log(eachExp);
   expArray.push(eachExp);
 }
-console.log(expArray);
-////////////////////
+// console.log(expArray);
+
 
 ////////////////////////////////////////////////////
+
 
 
 
@@ -103,14 +104,17 @@ if(exp >= 0 && exp < expArray[0]){ // 0 <= exp < 100 ... level 1
 	currentUser = level15;
 }
 
-console.log(currentUser, ' current');
-console.log(currentUser.hp);
-
 
 // Define something related to User class
+
 userHp = currentUser.hp;
+fixedHp = currentUser.hp;
+
+
 $('#statusLevel').text(`Level.${currentUser.level}`);
 $('#statusAttack').text(`Attack:${currentUser.attack}`);
+
+$('.userLevel').text(`Level.${currentUser.level}`)
 
 
 
@@ -135,6 +139,7 @@ const ryuoh = new Monster(10, 10000, 1000, 'https://iso-labo.com/labo/images/dra
 // https://iso-labo.com/labo/images/dragon_quest/boss/1-2_boss.png // transformed
 // final Boss
 let currentMonster = slime;
+// let fixedHpM = currentMonster.hp;
 
 $('#one').on('click', () => {
 	currentMonster = slime;
@@ -198,30 +203,14 @@ $('#ten').on('click', () => {
 })
 
 
-/*
-const slime = new Monster(1, 1000, 100, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_001.png', expArray[0], 'slime');
-const killerPanther = new Monster(2, 2000, 200, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_075.png', expArray[1]);
-const kandata = new Monster(3, 3000, 300, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_200.png', expArray[2]); // Boss1
-const golem = new Monster(4, 4000, 400, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_123.png', expArray[3]);
-const akumaShinkan = new Monster(5, 5000, 500, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_155.png', expArray[4]);
-const milledEarth = new Monster(6, 6000, 600, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_209.png', expArray[5]); // Boss2
-const killerMachine = new Monster(7, 7000, 700, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_164.png', expArray[6]);
-const gigantes = new Monster(8, 8000, 800, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_169.png', expArray[7]);
-const milledEarthX = new Monster(9, 9000, 900, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_210.png', expArray[8]); // Boss3
-const ryuoh = new Monster(10, 10000, 1000, 'https://iso-labo.com/labo/images/dragon_quest/boss/1-1_boss.png', expArray[9]); // Final
-// https://iso-labo.com/labo/images/dragon_quest/boss/1-2_boss.png
-*/
 
 
+$('.hp-num').text(`${userHp}/${currentUser.hp}`);
+$('.exp-num').text(`${exp}/${expArray[currentUser.level - 1]}`);
 
-
-
-
-console.log(slime.name);
-console.log('slime level : ', slime.level);
+// expArray[currentUser.level - 1]
 ////////////////////////////////
 
-enemyHp = currentMonster.hp;
 
 
 
@@ -265,35 +254,72 @@ let num2 = expArray[currentUser.level-1] - expArray[currentUser.level-2];
 
 let num3 = num1 / num2;
 let expBar = Math.floor(num3 * 100);
-console.log(expBar); // 7
+
 
 $('.exp-inner').css('width', `${expBar}%`);
 
+// function init() { // line 109
+	
+// 	let userHp = currentUser.hp;
+// 	let monsterHp = currentMonster.hp;
+// 	let userHp = currentUser.hp;
+// 	let fixedHp = currentUser.hp;
+// 	let hpBar = userHp / fixedHp * 100;
+// }
+// init();
+
 // enemy attacks every 2s until a user dies. 
 function setTimer() {
+	$('.hp-inner').css('width', '100%');
 	const startGame = setInterval(function() {
 		userHp-= currentMonster.attack; // 
+		let hpBar = userHp / fixedHp * 100;
+		// $('.hp-inner').css('width', `${hpBar}%`);
+		$('.hp-inner').velocity({width: `${hpBar}%`}, 1000);
+		console.log('userHp', hpBar);
+
 		console.log('User HP : ' + userHp);
+		console.log('hpBar ' + hpBar);
 		if(userHp <= 0){
 			clearInterval(startGame);
 			console.log('You lose.');
 			userHp = currentUser.hp; // reset HP
+			monsterHp = currentMonster.hp;
+			console.log('healed HP (user)', userHp);
+			console.log('healed HP (monster)', monsterHp);
 			gameBtn.css('visibility', 'visible');
-			console.log('healed HP', userHp);
+			$('.hp-inner').css('width', '100%');
+
+			
+			exp += currentMonster.expMonster * 0.7;
+			
 		}
 
-		if(enemyHp <= 0){
+		if(monsterHp <= 0){
 			clearInterval(startGame);
 			console.log('You win.');
 			userHp = currentUser.hp;
+			monsterHp = currentMonster.hp;
+			console.log('healed HP (user)', userHp);
+			console.log('healed HP (monster)', monsterHp);
+			$('.hp-inner').css('width', '100%');
 			gameBtn.css('visibility', 'visible');
+			exp += currentMonster.expMonster;
+			
 		}
 		if(game.hasClass('remove')){
 			clearInterval(startGame);
 			userHp = currentUser.hp;
+			monsterHp = currentMonster.hp;
+			console.log('healed HP (user)', userHp);
+			console.log('healed HP (monster)', monsterHp);
+			$('.hp-inner').css('width', '100%');
 			console.log('The battle is closed.');
+			
 		}
+
 	}, 2000);
+
 }
 
 
@@ -327,20 +353,15 @@ $('#before-btn').on('click', (e) => {
 });
 
 
+let monsterHp = currentMonster.hp;
 
+
+
+let hpBarM = 100;
 
 function typing(e) {
-	// console.log('typing is working')
-	// console.log(e.which)
     typed = String.fromCharCode(e.which);
-    // console.log(typed); // ok
-    // console.log(spans);
-    // console.log(spans[0]); // => <span class="span">g</span>
-    // console.log('innerHTML : ' + spans[0].innerHTML); // => e
-    // console.log('html : ' + spans[0].html); // => undefined
-    // console.log(typed);
-    // console.log('length : ' + spans.length);
-
+	
     for (let i = 0; i < spans.length; i++) {
     	if (spans[i].innerHTML == typed) { // if typed letter is the one from the word
 
@@ -358,36 +379,56 @@ function typing(e) {
 // if the first one is at the index 0 and second at index 5 for example)
 
     let checker = 0;
+    let numOfWords = 0;
     for (let j = 0; j < spans.length; j++) { //checking if all the letters are typed
-      if (spans[j].className === "span bg") {
+      	if (spans[j].className === "span bg") {
         checker++;
-        // console.log(checker);
-      }  
+      	}  
       // after one word   // replaced 'spans' to 'wordArray'
-      if (checker === spans.length) { // if so, animate the words with animate.css class
-        // spark.pause();
-        // spark.currentTime = 0;
-        // spark.play();
-        // words.classList.add("animated");
-        // words.classList.add("fadeOut");
-        // points++; // increment the points
-        // scoreDiv.innerHTML = points; //add points to the points div
-        enemyHp -= currentUser.attack;
-    	console.log('Enemy HP : ' + enemyHp);
+     	if (checker === spans.length) { // if so, animate the words with animate.css class
+        	numOfWords++;
+        	monsterHp -= currentUser.attack;
+        	$('#monsterImg').effect('shake', {times:2,distance:16}, 200);
+        	// {times:2,distance:6},200
 
-        $(document).off("keypress", typing);
+// $('#monsterImg').velocity({
+// 	perspective: [0, 50],
+// 	rotateX: 360,
+// 	translateX: 60, 
+// 	opacity: [1, 0.55],
+// 	height: "+=350",
+// 	width: "+=350"
+// 	shake: 
+// }, {
+// 	duration: 3000,
+// 	loop: 4,
+// 	delay: 20
+// })
+			hpBarM = monsterHp / currentMonster.hp * 100;
+			// $('.hp-inner-m').css('width', `${hpBarM}%`);
+			$('.hp-inner-m').velocity({width: `${hpBarM}%`}, 1000);
+			console.log('Monster HP Bar ', hpBarM);
+    		console.log('Monster HP : ' + monsterHp);
+
+        	$(document).off("keypress", typing);
         
-        setTimeout(function(){
-          words.className = "words"; // restart the classes
-          random(); // give another word
-          $(document).on("keypress", typing);
-        }, 400);
+        	setTimeout(function(){
+        		words.className = "words"; // restart the classes
+          		random(); // give another word
+          		$(document).on("keypress", typing);
+        	}, 400);
 
-      }
+    	}
+
 
     }
+
 }
 
+    	
+$('#numOfWords').text(`words`);
+
+// hpBarM =  monsterHp / fixedHpM * 100;
 
 $(document).on('keypress', typing); // console shows error when I type
 
@@ -398,21 +439,6 @@ $('.open-game').on('click', () => {
 	$('.game-modal').toggleClass('remove'); //  + game-modal
 	$('.before-game').toggleClass('remove'); //  + before-game modal
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -429,11 +455,13 @@ $('#before-btn').on('click', () => {
 $('#game-btn').on('click', () => {
 	$('.game').toggleClass('remove'); //  - game
 	$('.after-game').toggleClass('remove');	//  + after-game
+	
 })
 
 $('#after-btn').on('click', () => {
 	$('.after-game').toggleClass('remove'); //  - after-game
 	$('.game-modal').toggleClass('remove');  //  - game-modal
+	
 })
 
 
@@ -461,65 +489,12 @@ $('#close-after-game').on('click', () => {
 
 
 
+$('#d1').click(function(){
+$( "#d1" ).effect( "shake",{times:2,distance:6},200);
+})
 
 
 
-
-
-
-
-
-
-
-
-
-// $('#nameBtn').on('click', () => {
-// 	const newName = $("#inputName").val();
-// 	console.log(newName);
-// 	User.name = newName;
-// 	console.log(User.name);
-// })
-
-
-
-// const nameFunction = (e) => {
-// 	// e.preventDefault();
-// 	const newName = $("input[name='userName']").val();
-// 	$('#test').text(`new name is ${newName}`);
-
-// 	$("input[name='newName']").val('');
-// }
-
-// const nameFunction = (e) => {
-// 	// e.preventDefault();
-// 	const newName = $("#inputName").val();
-// 	console.log(newName);
-
-// 	// $('#test').text(`new name is ${newName}`);
-
-// 	// $("input[name='newName']").val('');
-// }
-
-
-// nameFunction();
-
-
-
-
-// const changeName = (e) => {
-// 	e.preventDefault();
-// 	const newName = $("input[name='newName']").val();
-// 	console.log(newName, ': This is name');
-// 	$('.showName').text(`New name is "${newName}"`);
-// 	// comment out due to problem
-// 	name = newName;
-
-// 	$('#status-name').text(`Name:${newName}`);
-	
-
-// 	$("input[name='newName']").val('');
-// 	console.log(name);
-// }
 
 
 
@@ -528,15 +503,9 @@ $('#close-after-game').on('click', () => {
 
 
 /////////////////////////////////////////////////////
-const monsterImage = $('<img/>').attr('src', ryuoh.img);
-const $testDiv = $('#testDiv')
-$testDiv.append(monsterImage);
 
 
-$('#test').on('click', () => {
-	console.log('clicked');
-	$('#test').toggleClass('remove');
-})
+
 
 
 

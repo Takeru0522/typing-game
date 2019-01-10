@@ -4,17 +4,28 @@ body {
 	height: auto;
 	margin: 0 auto;
 	font-family: 'Press Start 2P', cursive;
+	background-color: #f5f5f5;
 }
 
 
 header {
-	background-color: coral;
+	background-color: #f5f5f5;
 	height: auto;
 
 }
 
 h1 {
+	font-family: 'Impact';
 	text-align: center;
+	letter-spacing: 10px;
+	font-size: 70px;
+	border-top: 3px solid white;
+	border-bottom: 3px solid white;
+}
+
+a {
+	text-decoration: none;
+	color: black;
 }
 
 .display {
@@ -27,29 +38,32 @@ h1 {
 }*/
 
 .contents-wrapper {
-	background-color: #cdedf7; /*light blue*/
+	background-color: #f5f5f5; /*light blue  #cdedf7 */
 	height: auto;
 	width: auto;
 
 }
 
 .contents-inner-wrapper {
-	background-color: #F4CDF7; /*pink*/ 
+	background-color: #f5f5f5 /* #F4CDF7 */; /*pink*/ 
 	height: auto;
 	width: 90vw;
 	margin: 0 auto;
 }
 
 h2 {
-	border-bottom: 1px solid grey;
-	width: auto;
+	border-bottom: 5px solid white;
+	width: 18vw;
+	padding-left: 15px;
 }
 
 .profile-wrapper {
-	background-color: #75716B;
-	margin: 0 auto;
+
+	background-color: #242405 /*#75716B*/;
+	margin: 15px auto;
+	border: 1px solid black;
 	height: 30vh;
-	width: 30vw;
+	width: 40vw;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -58,7 +72,7 @@ h2 {
 .profile {
 	
 	height: auto;
-	width: 30vw;
+	width: 40vw;
 
 }
 
@@ -66,6 +80,13 @@ h2 {
 	/*display: none;*/
 	/*background-color: yellow;*/
 	height: 30vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+input {
+	margin: 10px;
 }
 
 .second-page {
@@ -81,6 +102,20 @@ h2 {
 	height: 100%;
 
 }
+.hp-exp-num {
+	position: relative;
+	top: -80px;
+	left: 192px;
+}
+
+.hp-num, .exp-num {
+	font-size: 10px; 
+}
+
+.exp-num {
+	position: relative;
+	top: 6px;
+}
 
 #userName {
 	margin-top: 0px;
@@ -92,19 +127,7 @@ h2 {
 	padding-left: 10px;
 }
 
-/*
 
-									<div class="hp-bar-wrapper">
-										<div class="hp-outer">
-											<div class="hp-inner"></div>
-										</div>
-									</div>
-									<div class="exp-bar-wrapper">
-										<div class="exp-outer">
-											<div class="exp-inner"></div>
-										</div>
-									</div>
-*/
 .hp-bar-wrapper, .exp-bar-wrapper {
 	height: 10px;
 	width: 120px;
@@ -168,15 +191,57 @@ h2 {
 	position: absolute;
 }
 
+/* Bars in modal*/
 
+.before-game .hp-bar-wrapper {
+	border: 1px solid white;
+	height: 13px;
+	width: 150px;
+	position: relative;
+	top: -5px;
+	left: 180px;
+}
 
+.before-game .exp-bar-wrapper {
+	border: 1px solid white;
+	height: 13px;
+	width: 150px;
+	position: relative;
+	top: -5px;
+	left: 180px;
+}
 
+.game .hp-bar-wrapper {
+	border: 1px solid white;
+	height: 13px;
+	width: 200px;
+	top: -65px;
+	left: 90px;
+}
 
+.game .exp-bar-wrapper {
+	border: 1px solid white;
+	height: 13px;
+	width: 200px;
+	top: -48px;
+	left: 90px;
+}
+#monster-hp-bar-wrapper {
+	top: -33px;
+	left: 97px;
+}
+.hp-inner-m {
+	
+	height: 100%;
+	width: 100%;
+	background-color: #C72424;
+	position: absolute; 
+}
 
 
 
 .contents {
-	background-color: #F6F7CD;  /*yellow*/
+	background-color: #f5f5f5;  /*yellow#F6F7CD*/
 	height: 82vh;
 	width: 90vw;
 	margin: 0 auto;
@@ -194,7 +259,7 @@ h2 {
 }
 
 .game-modal {
-	background-color: #75716B;
+	background-color: #f5f5f5 /*#75716B*/;
 	height: 80vh;
 	width: 100vw;
 	text-align: center;
@@ -231,7 +296,7 @@ h2 {
 }
 
 .game-modal-inner img {
-	margin: 103px;
+	margin: 35px;
 }
 
 .game p {
@@ -239,9 +304,9 @@ h2 {
 	padding-left: 10px;
 }
 
-#monsterImg {
-	height: 70px;
-	width: 70px;
+#monsterImg img {
+	height: 10px;
+	width: 10px;
 }
 
 .words {
@@ -276,12 +341,13 @@ h2 {
 footer {
 	width: auto;
 	height: 30vh;
-	background-color: #FAC273;
+	background-color: #f5f5f5 /*#FAC273*/;
 }
 
 
-#test {
-
+#bottom-img {
+	text-align: center;
+	padding: 20px;
 }
 
 

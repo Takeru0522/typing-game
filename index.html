@@ -2,14 +2,19 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Archivo+Black" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.js"></script>
+	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+      </script>
 	<title>Typing Game</title>
 </head>
 <body>
 	<header>
-		<h1>Typing Game</h1>	
+		<h1>TYPING</h1>	
 		<nav>
 			<a href="about.html">About</a>
 			<a href="">How to play</a>
@@ -25,6 +30,7 @@
 
 						<div class="first-page">  <!-- if(user Name = null) {display this} -->
 							<form>
+								<p>What is your name?</p>
 								<input id="inputName"type="text" name="userName" placeholder="user name">
 								<input type="submit" id="submit-btn">
 							</form>							
@@ -58,6 +64,11 @@
 											<div class="exp-inner"></div>			
 										</div>	
 									</div>
+									<div class="hp-exp-num">
+										<p class="hp-num">/</p>
+										<p class="exp-num">/</p>										
+									</div>
+
 
 								</div>								
 							</div>
@@ -68,7 +79,7 @@
 					</div>
 				</div>
 
-				<h2>Practice</h2>
+				<h2>Adventure</h2>
 				<div class="contents">
 					<div class="open-game" id="one">1</div>
 					<div class="open-game" id="two">2</div>
@@ -98,11 +109,27 @@
 				<div class="game-modal-inner">
 					<div class="before-game remove">
 						<p><span id="close-before-game" class="fas fa-times"></span></p>
-						<p>Practice - Easy</p> <!-- chosen level -->
+						<p></p> <!-- chosen level -->
 						<img src="https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png">
-						<p id="userName2">User Name : </p>
-						<p>User Level : </p>
-						<p>Exp.</p>
+						<p id="userName2">User Name</p>
+						<p class='userLevel'>User Level</p>
+						<p>HP</p>
+						<div class="hp-bar-wrapper">
+							<div class="hp-wrap">
+											
+								<div class="hp-outer"></div>
+								<div class="hp-inner"></div>
+							</div>
+						</div>						
+						<p>Exp</p>
+
+
+						<div class="exp-bar-wrapper">
+							<div class="exp-wrap">
+								<div class="exp-outer"></div>
+								<div class="exp-inner"></div>			
+							</div>	
+						</div>
 						<button id="before-btn">Start</button>
 					</div>
 
@@ -110,11 +137,34 @@
 						<p><span id="close-game" class="fas fa-times"></span></p>
 						<p id="monsterName">Monster</p>
 						<p>HP</p>
+						<div class="hp-bar-wrapper" id="monster-hp-bar-wrapper">
+							<div class="hp-wrap">
+											
+								<div class="hp-outer"></div>
+								<div class="hp-inner-m"></div>
+							</div>
+						</div>
+
 						<img id="monsterImg">
 						<div class="words">"Word to type"</div>
 						<p id="userName3">User Name</p>
+						<p class='userLevel'>User Level</p>
 						<p>HP</p>
 						<p>Exp</p>
+						<div class="hp-bar-wrapper">
+							<div class="hp-wrap">
+											
+								<div class="hp-outer"></div>
+								<div class="hp-inner"></div>
+							</div>
+						</div>
+
+						<div class="exp-bar-wrapper">
+							<div class="exp-wrap">
+								<div class="exp-outer"></div>
+								<div class="exp-inner"></div>			
+							</div>	
+						</div>
 						<button id="game-btn">See Result</button>
 					</div>
 
@@ -124,7 +174,7 @@
 							<p>Result</p>
 							<img src="https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png">
 							<div class="result-textarea">
-								<p>Score : </p>
+								<p id="numOfwords">Score--- : </p>
 								<p>Exp. </p>
 							</div>
 							<button id="after-btn">Close</button>
@@ -152,15 +202,12 @@
 		</div>
 	</footer>
 
+	<p id="d1">Aaaaaaaaaaaa</p>
 
-
+	<div id="bottom-img">
+		<img src="https://iso-labo.com/labo/images/dragon_quest/boss/1-1_boss.png">	
+	</div>
 	
-	
-	
-	<p id="test">Test</p>
-	<div id="testDiv"></div>
-	<!-- <p class="words"></p> -->
-
 
 
 
