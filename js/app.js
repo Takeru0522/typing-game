@@ -118,7 +118,7 @@ const Ryuoh = new Monster(10, 10000, 1000, 'https://iso-labo.com/labo/images/dra
 // https://iso-labo.com/labo/images/dragon_quest/boss/1-2_boss.png // transformed
 // final Boss
 let currentMonster = Slime;
-
+let currentMonsterFullHP = currentMonster.hp;
 
 
 
@@ -126,6 +126,7 @@ let currentMonster = Slime;
 function render (){
 	let userHp = currentUser.hp;
 	let monsterHp = currentMonster.hp;
+	// let currentMonster.hp = currentMonsterFullHP;
 	console.log('monsterHp ', monsterHp);
 	let expBar;
 	let hpBarM = monsterHp / currentMonster.hp * 100;
@@ -238,6 +239,7 @@ $('form').on('submit', changeName)
 $('#submit-btn').on('click', () => {
 	$('.first-page').toggleClass('remove');
 	$('.second-page').toggleClass('remove');
+	$('#openDiv').toggleClass('remove');
 })
 
 
@@ -276,7 +278,7 @@ function setTimer() {
 
 
 
-		if(monsterHp <= 0){ // Win
+		if(currentMonster.hp <= 0){ // Win
 			clearInterval(startGame);
 			console.log('You win.');
 
@@ -346,7 +348,7 @@ function random() {
 		words.append(span);
 	}
 	spans = $('.span');
-	// console.log(spans);
+	console.log(spans);
 }
 
 
@@ -399,13 +401,18 @@ function typing(e) {
         	console.log(numOfWords);
         	console.log('UserAttack.............')
         	// $('.hp-inner-m').velocity({width: `${hpBarM}%`}, 1000);
-        	$('#monsterImg').effect('shake', {times:2,distance:16}, 200);
+        	// $('#monsterImg').effect('shake', {times:2,distance:16}, 200);
         	let monsterHp = currentMonster.hp
-			let hpBarM = monsterHp / currentMonster.hp * 100;
+			let hpBarM =  currentMonster.hp / currentMonsterFullHP * 100;
 			console.log('Monster HP : ' + monsterHp);
+			console.log('hpBarM = ', hpBarM);
     		monsterHp -= currentUser.attack;
+    		currentMonster.hp -= currentUser.attack;
+    		console.log('M POWRER After = ', monsterHp);
 			$('.hp-inner-m').css('width', `${hpBarM}%`);
-			$('.hp-inner-m').velocity({width: `${hpBarM}%`}, 1000);
+			$('.hp-inner-m').css('width', `{hpBarM}%`);
+			// $('.hp-inner-m').css({width: `${hpBarM}%`);
+			// $('.hp-inner-m').velocity({width: `${hpBarM}%`}, 1000);
 			
 			
 			
@@ -423,6 +430,7 @@ function typing(e) {
 
 
     }
+
 
 
 }
@@ -523,6 +531,56 @@ $('#setting').on('click', () => {
 	}
 
 })
+
+
+$('#openDiv').on('click', () => {
+	
+	if($('#one').hasClass('remove')){
+		$('#one').toggleClass('remove');
+		$('#one').velocity('slideDown');
+		$('#openDiv').velocity({rotateX: -180}, 500)
+		
+		
+
+	} else {
+		$('#one').toggleClass('remove');
+		$('#one').velocity('slideUp');
+		
+		
+		$('#openDiv').velocity({rotateX: +180}, 500)
+	}
+
+	if($('#two').hasClass('remove')){
+		
+		
+		$('#openDiv').velocity({rotateX: -180}, 500)
+		$('#two').toggleClass('remove');
+		$('#two').velocity('slideDown');
+
+	} else {
+		
+		
+		$('#two').toggleClass('remove');
+		$('#two').velocity('slideUp');
+		$('#openDiv').velocity({rotateX: +180}, 500)
+	}
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 $('#aaa').on('click', () => {

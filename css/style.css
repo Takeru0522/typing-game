@@ -34,6 +34,8 @@ nav {
 	justify-content: center;
 }
 
+
+
 li {
 	list-style: none;
 }
@@ -62,7 +64,16 @@ li {
 #setting {
 	position: relative;
 	top: 29px;
-	left: -79px;;
+	left: -79px;
+}
+
+#openDiv {
+	
+
+	text-align: center;
+	position: relative;
+	top: 14px;
+	left: -102px;
 }
 
 .visibility {
@@ -83,7 +94,7 @@ a {
 }
 
 main {
-	height: 100vh;
+	height: auto;
 }
 .display {
 	display: none;
