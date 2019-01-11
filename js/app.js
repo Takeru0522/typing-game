@@ -125,11 +125,12 @@ let currentMonsterFullHP = currentMonster.hp;
 // let fixedHpM = currentMonster.hp;
 function render (){
 	let userHp = currentUser.hp;
-	let monsterHp = currentMonster.hp;
-	// let currentMonster.hp = currentMonsterFullHP;
+	// let currentMonster.hp = monster.hp;
+	let currentMonsterFullHP = currentMonster.hp;
 	console.log('monsterHp ', monsterHp);
 	let expBar;
-	let hpBarM = monsterHp / currentMonster.hp * 100;
+	// let hpBarM = monsterHp / currentMonster.hp * 100;
+	let hpBarM = 100;
 	if(currentUser.level === 1){
 		expBar = exp / expArray[0] * 100;
 	} else {
@@ -250,7 +251,7 @@ $('#submit-btn').on('click', () => {
 // enemy attacks every 2s until a user dies. 
 function setTimer() {
 	let userHp = currentUser.hp;
-	
+	// let monsterHp = ;
 	// let monsterHp = currentMonster.hp;
 	const startGame = setInterval(function() {
 		userHp -= currentMonster.attack; // 
@@ -272,7 +273,8 @@ function setTimer() {
 			exp += currentMonster.expMonster * 0.7;
 			setUserLevel();
 			console.log('user level changed? ' + currentUser.level)
-
+			// let currentMonster.hp = currentMonsterFullHP;
+			console.log('healed', currentMonster.hp);
 			
 		}
 
@@ -287,32 +289,33 @@ function setTimer() {
 			exp += currentMonster.expMonster;
 			setUserLevel();
 			console.log('user level changed? ' + currentUser.level)
-			
+			$('#two').toggleClass('remove');
+			$('#two').velocity('slideDown');
 
 			console.log('User EXP after Win', exp);		
 		}
-		if(monsterHp <= 0 && currentMonster.level === 2){
+		if(currentMonster.hp <= 0 && currentMonster.level === 2){
 			$('#three').toggleClass('remove');
 			$('#three').velocity('slideDown');
 		}
-		if(monsterHp <= 0 && currentMonster.level === 3){
+		if(currentMonster.hp <= 0 && currentMonster.level === 3){
 			$('#four').toggleClass('remove');
 			$('#four').velocity('slideDown');
 			$('#five').toggleClass('remove');
 			$('#five').velocity('slideDown');
 		}
-		if(monsterHp <= 0 && currentMonster.level === 5){
+		if(currentMonster.hp <= 0 && currentMonster.level === 5){
 			$('#six').toggleClass('remove');
 			$('#six').velocity('slideDown');
 		}
 
-		if(monsterHp <= 0 && currentMonster.level === 6){
+		if(currentMonster.hp <= 0 && currentMonster.level === 6){
 			$('#seven').toggleClass('remove');
 			$('#seven').velocity('slideDown');
 			$('#eight').toggleClass('remove');
 			$('#eight').velocity('slideDown');
 		}
-		if(monsterHp <= 0 && currentMonster.level === 9){
+		if(currentMonster.hp <= 0 && currentMonster.level === 9){
 			$('#ten').toggleClass('remove');
 			$('#ten').velocity('slideDown');
 
