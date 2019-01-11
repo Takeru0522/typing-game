@@ -54,7 +54,7 @@ const level15 = new User(15, 15000, 1500, '');
 
 let currentUser;  // you need to change Exp if you want to change Level
 
-let exp = 1300;
+let exp = 240;
 function setUserLevel(){
 if(exp >= 0 && exp < expArray[0]){ // 0 <= exp < 100 ... level 1
 	currentUser = level1
@@ -118,6 +118,10 @@ const Ryuoh = new Monster(10, 10000, 1000, 'https://iso-labo.com/labo/images/dra
 // https://iso-labo.com/labo/images/dragon_quest/boss/1-2_boss.png // transformed
 // final Boss
 let currentMonster = Slime;
+
+
+
+
 // let fixedHpM = currentMonster.hp;
 function render (){
 	let userHp = currentUser.hp;
@@ -153,6 +157,7 @@ function render (){
 
 }
 render();
+
 
 $('#one').on('click', () => {
 	currentMonster = Slime;
@@ -269,6 +274,8 @@ function setTimer() {
 			
 		}
 
+
+
 		if(monsterHp <= 0){ // Win
 			clearInterval(startGame);
 			console.log('You win.');
@@ -282,6 +289,32 @@ function setTimer() {
 
 			console.log('User EXP after Win', exp);		
 		}
+		if(monsterHp <= 0 && currentMonster.level === 2){
+			$('#three').toggleClass('remove');
+			$('#three').velocity('slideDown');
+		}
+		if(monsterHp <= 0 && currentMonster.level === 3){
+			$('#four').toggleClass('remove');
+			$('#four').velocity('slideDown');
+			$('#five').toggleClass('remove');
+			$('#five').velocity('slideDown');
+		}
+		if(monsterHp <= 0 && currentMonster.level === 5){
+			$('#six').toggleClass('remove');
+			$('#six').velocity('slideDown');
+		}
+
+		if(monsterHp <= 0 && currentMonster.level === 6){
+			$('#seven').toggleClass('remove');
+			$('#seven').velocity('slideDown');
+			$('#eight').toggleClass('remove');
+			$('#eight').velocity('slideDown');
+		}
+		if(monsterHp <= 0 && currentMonster.level === 9){
+			$('#ten').toggleClass('remove');
+			$('#ten').velocity('slideDown');
+
+		}
 
 
 		if(game.hasClass('remove')){
@@ -290,6 +323,8 @@ function setTimer() {
 		}
 
 	}, 2000);
+
+
 
 }
 
@@ -365,7 +400,7 @@ function typing(e) {
         	console.log('UserAttack.............')
         	// $('.hp-inner-m').velocity({width: `${hpBarM}%`}, 1000);
         	$('#monsterImg').effect('shake', {times:2,distance:16}, 200);
-        	let monsterHp = currentMonster.hp;
+        	let monsterHp = currentMonster.hp
 			let hpBarM = monsterHp / currentMonster.hp * 100;
 			console.log('Monster HP : ' + monsterHp);
     		monsterHp -= currentUser.attack;
@@ -475,23 +510,51 @@ $('#close-after-game').on('click', () => {
 
 
 
+$('#setting').on('click', () => {
+	
+	if($('.profile-wrapper').hasClass('remove')){
+		$('.profile-wrapper').toggleClass('remove');
+		$('.profile-wrapper').velocity('slideDown');
+		$('#setting').velocity({rotateX: -180}, 500)
+	} else {
+		$('.profile-wrapper').toggleClass('remove');
+		$('.profile-wrapper').velocity('slideUp');
+		$('#setting').velocity({rotateX: +180}, 500)
+	}
+
+})
 
 
+$('#aaa').on('click', () => {
+	$('#slimeImg').velocity({
+		left: "300px",
+	}, {
+		duration: 1500,
+		easing: "linear"
+	});
+})
 
 
-
-
-
+// $( "#d1" ).effect( "shake",{times:2,distance:6},200);
 $('#d1').click(function(){
-$( "#d1" ).effect( "shake",{times:2,distance:6},200);
+	$("#d1").velocity({
+    left: "500px",
+}, {
+    duration: 3000, 
+    easing: "linear"
+});  
+
 })
 
 
 
 
+// $('#nine').css('visibility', 'hidden')
 
-
-
+$('#bbb').on('click', () => {
+	$('#nine').toggleClass('remove');
+	$('#nine').velocity('slideDown', 3000);
+})
 
 
 

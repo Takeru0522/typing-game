@@ -14,18 +14,24 @@
 </head>
 <body>
 	<header>
+
 		<h1>TYPING</h1>	
+
+		<button id="aaa"></button>
+		<div id="top-img">
+			<img src="https://iso-labo.com/labo/images/dragon_quest/boss/1-1_boss.png">	
+		</div>
+		<!-- <div class="shadow"></div> -->
 		<nav>
-			<a href="about.html">About</a>
-			<a href="">How to play</a>
-			<a href="">Your status</a>
+			<div>Start Game</div>
+			<div id="setting" class="fas fa-angle-double-down"></div>
 		</nav>	
 	</header>
 
 	<main>
 		<div class="contents-wrapper">
 			<div class="contents-inner-wrapper">
-				<div class="profile-wrapper">
+				<div class="profile-wrapper remove">
 					<div class="profile">
 
 						<div class="first-page">  <!-- if(user Name = null) {display this} -->
@@ -41,7 +47,7 @@
 								
 								<p class="userName" id="userName">Name</p>
 								<div class="image-area">
-									<img src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_001.png">
+									<img id="slimeImg" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_001.png">
 								</div>
 								<div class="info-area">
 									<p id="statusLevel">Level.1</p>
@@ -78,22 +84,39 @@
 
 					</div>
 				</div>
-
-				<h2>Adventure</h2>
+				<div class="wrap">
+				<!-- <h2>Adventure</h2> -->
+				<div class="contents-area">
 				<div class="contents">
-					<div class="open-game" id="one">1</div>
-					<div class="open-game" id="two">2</div>
-					<div class="open-game" id="three">3</div> <!-- Boss 1 -->
-					<div class="open-game" id="four">4</div>
-					<div class="open-game" id="five">5</div>
-					<div class="open-game" id="six">6</div> <!-- Boss 2 -->
-					<div class="open-game" id="seven">7</div>
-					<div class="open-game" id="eight">8</div>
-					<div class="open-game" id="nine">9</div> <!-- Boss 3 -->
-					<div class="open-game" id="ten">10</div> <!-- Final Boss -->
+					<div class="open-game remove" id="one">1</div>
+					<div class="open-game remove" id="two">2</div>
 				</div>
+				<div class="contents">
+					<div class="open-game remove" id="three">3</div> <!-- Boss 1 -->
+				</div>
+				<div class="contents">
+					<div class="open-game remove" id="four">4</div>
+					<div class="open-game remove" id="five">5</div>
+				</div>
+				<div class="contents">
+					<div class="open-game remove" id="six">6</div> <!-- Boss 2 -->
+				</div>
+				<div class="contents">
+					<div class="open-game remove" id="seven">7</div>
+					<div class="open-game remove" id="eight">8</div>
+				</div>
+				<div class="contents">
+					<div class="open-game remove" id="nine">9</div> <!-- Boss 3 -->
+				</div>
+				<div class="contents">
+					<div class="open-game remove" id="ten">10</div> <!-- Final Boss -->
+				</div>
+				</div>
+				</div>
+
 			</div>
 
+			<button id="bbb"></button>
 <!-- 			<div class="contents-inner-wrapper">
 				<h2>Test</h2>
 				<div class="contents">
@@ -110,7 +133,7 @@
 					<div class="before-game remove">
 						<p><span id="close-before-game" class="fas fa-times"></span></p>
 						<p></p> <!-- chosen level -->
-						<img src="https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png">
+						<img src="#"> <!--- https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png ---->
 						<p class="userName">User Name</p>
 						<p class='userLevel'>User Level</p>
 						<p>HP</p>
@@ -172,7 +195,8 @@
 						<p><span id="close-after-game" class="fas fa-times"></span></p>
 						<div class="result-box"> <!-- result Box -->
 							<p>Result</p>
-							<img src="https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png">
+							<img src="#">
+							<!-- https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png -->
 							<div class="result-textarea">
 								<p id="numOfwords">Score--- : </p>
 								<p>Exp. </p>
@@ -204,9 +228,7 @@
 
 	<p id="d1">Aaaaaaaaaaaa</p>
 
-	<div id="bottom-img">
-		<img src="https://iso-labo.com/labo/images/dragon_quest/boss/1-1_boss.png">	
-	</div>
+
 	
 
 

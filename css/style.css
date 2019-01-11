@@ -14,6 +14,11 @@ header {
 
 }
 
+footer {
+	border-top: 3px solid white;
+	border-bottom: 3px solid white;	
+}
+
 h1 {
 	font-family: 'Impact';
 	text-align: center;
@@ -23,11 +28,63 @@ h1 {
 	border-bottom: 3px solid white;
 }
 
+nav {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+
+li {
+	list-style: none;
+}
+
+#top-img {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#top-img img {
+	height: 130px;
+	width: 130px;
+	
+
+}
+
+/*.shadow {
+	height: 10px;
+	width: 10px;
+	margin: 0 auto;
+	box-shadow: 70px 70px 70px 70px black;
+	position: relative;
+	top: 0px;
+	left: -20px;
+}*/
+#setting {
+	position: relative;
+	top: 29px;
+	left: -79px;;
+}
+
+.visibility {
+	visibility: hidden;
+}
+
+h2 {
+	text-align: center;
+	margin: 0 auto;
+	border-bottom: 5px solid white;
+	width: 28vw;
+	
+}
+
 a {
 	text-decoration: none;
 	color: black;
 }
 
+main {
+	height: 100vh;
+}
 .display {
 	display: none;
 }
@@ -36,6 +93,10 @@ a {
 	height: 70vh;
 
 }*/
+#setting span {
+	margin: 0 auto;
+}
+
 
 .contents-wrapper {
 	background-color: #f5f5f5; /*light blue  #cdedf7 */
@@ -51,28 +112,25 @@ a {
 	margin: 0 auto;
 }
 
-h2 {
-	border-bottom: 5px solid white;
-	width: 18vw;
-	padding-left: 15px;
-}
-
 .profile-wrapper {
 
-	background-color: #242405 /*#75716B*/;
-	margin: 15px auto;
+	background-color: white /*#75716B*/;
+
+	margin: 44px auto;
 	border: 1px solid black;
 	height: 30vh;
-	width: 40vw;
+	width: 35%;
 	text-align: center;
 	display: flex;
 	justify-content: center;
+	position: relative;
+	top: 50px;
 }
 
 .profile {
 	
 	height: auto;
-	width: 40vw;
+	width: 30vw;
 
 }
 
@@ -192,7 +250,9 @@ input {
 }
 
 /* Bars in modal*/
-
+.before-game {
+	margin: 0 auto;
+}
 .before-game .hp-bar-wrapper {
 	border: 1px solid white;
 	height: 13px;
@@ -238,22 +298,29 @@ input {
 	position: absolute; 
 }
 
-
+.wrap {
+	margin: 100px auto;
+}
 
 .contents {
 	background-color: #f5f5f5;  /*yellow#F6F7CD*/
-	height: 82vh;
+	height: auto;
 	width: 90vw;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	align-items: center;
+}
+
+.constents-area {
+	height: 100vh;
 }
 
 .contents div {
 	margin: 15px;
 	height: 100px;
-	width: 25%;
+	width: 30vw;
 	border: 1px solid grey;
 
 }
@@ -345,10 +412,37 @@ footer {
 }
 
 
-#bottom-img {
-	text-align: center;
-	padding: 20px;
-}
+
+
+/**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
