@@ -14,7 +14,12 @@ JavaScript,
 jQuery
 
 # Wireflame
-![LOTR]()
+![LOTR](https://github.com/Takeru0522/typing-game/blob/master/images/typing1.png?raw=true)
+
+![LOTR](https://github.com/Takeru0522/typing-game/blob/master/images/typing3.png?raw=true)
+![LOTR](https://github.com/Takeru0522/typing-game/blob/master/images/typing5.png?raw=true)
+![LOTR](https://github.com/Takeru0522/typing-game/blob/master/images/typing4.png?raw=true)
+
 
 # Reference
 img of monsters
