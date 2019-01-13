@@ -161,6 +161,16 @@ function render (){
 render();
 
 
+
+
+$('.open-game').on('click', () => {
+	$('before-monster-img').attr('src', currentMonster.img);
+})
+
+
+
+
+
 $('#one').on('click', () => {
 	currentMonster = Slime;
 	// $('#monsterName').text(`<${currentMonster.name}>`);
@@ -241,6 +251,7 @@ $('#submit-btn').on('click', () => {
 	$('.first-page').toggleClass('remove');
 	$('.second-page').toggleClass('remove');
 	$('#openDiv').toggleClass('remove');
+	$('#openDiv').velocity('slideDown');
 })
 
 
@@ -366,7 +377,7 @@ $('#before-btn').on('click', (e) => {
 
 
 
-
+let numOfWords = [];
 
 
 
@@ -393,17 +404,17 @@ function typing(e) {
 // if the first one is at the index 0 and second at index 5 for example)
 
     let checker = 0;
-    let numOfWords = 0;
+    
     for (let j = 0; j < spans.length; j++) { //checking if all the letters are typed
       	if (spans[j].className === "span bg") {
         checker++;
       	}  
       // after one word   // replaced 'spans' to 'wordArray'
      	if (checker === spans.length) { // if so, animate the words with animate.css class
-        	numOfWords++;
+        	numOfWords.push('a');
         	console.log(numOfWords);
         	console.log('UserAttack.............')
-        	// $('.hp-inner-m').velocity({width: `${hpBarM}%`}, 1000);
+        	
         	// $('#monsterImg').effect('shake', {times:2,distance:16}, 200);
         	let monsterHp = currentMonster.hp
 			let hpBarM =  currentMonster.hp / currentMonsterFullHP * 100;
@@ -412,8 +423,9 @@ function typing(e) {
     		monsterHp -= currentUser.attack;
     		currentMonster.hp -= currentUser.attack;
     		console.log('M POWRER After = ', monsterHp);
-			$('.hp-inner-m').css('width', `${hpBarM}%`);
-			$('.hp-inner-m').css('width', `{hpBarM}%`);
+			// $('.hp-inner-m').css('width', `${hpBarM}%`);
+			$('.hp-inner-m').velocity({width: `${hpBarM}%`}, 1000);
+			
 			// $('.hp-inner-m').css({width: `${hpBarM}%`);
 			// $('.hp-inner-m').velocity({width: `${hpBarM}%`}, 1000);
 			
@@ -440,7 +452,7 @@ function typing(e) {
 	
 
     	
-$('#numOfWords').text(`words`);
+
 
 // hpBarM =  monsterHp / fixedHpM * 100;
 
@@ -472,6 +484,7 @@ $('#game-btn').on('click', () => {
 	$('.game').toggleClass('remove'); //  - game
 	$('.after-game').toggleClass('remove');	//  + after-game
 	render();
+	$('#numOfWords').text(`${numOfWords.length} words`);
 })
 
 $('#after-btn').on('click', () => {
@@ -533,6 +546,11 @@ $('#setting').on('click', () => {
 		$('#setting').velocity({rotateX: +180}, 500)
 	}
 
+})
+
+$('.back-p').on('click', () => {
+	$('.first-page').toggleClass('remove');
+	$('.second-page').toggleClass('remove');
 })
 
 
