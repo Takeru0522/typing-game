@@ -54,7 +54,7 @@ const level15 = new User(15, 15000, 1500, '');
 
 let currentUser;  // you need to change Exp if you want to change Level
 
-let exp = 240;
+let exp = 1240;
 function setUserLevel(){
 if(exp >= 0 && exp < expArray[0]){ // 0 <= exp < 100 ... level 1
 	currentUser = level1
@@ -119,6 +119,7 @@ const Ryuoh = new Monster(10, 10000, 1000, 'https://iso-labo.com/labo/images/dra
 // final Boss
 let currentMonster = Slime;
 let currentMonsterFullHP = currentMonster.hp;
+
 
 
 
@@ -554,41 +555,47 @@ $('.back-p').on('click', () => {
 })
 
 
-$('#openDiv').on('click', () => {
+// $('#openDiv').on('click', () => {
 	
-	if($('#one').hasClass('remove')){
-		$('#one').toggleClass('remove');
-		$('#one').velocity('slideDown');
-		$('#openDiv').velocity({rotateX: -180}, 500)
+// 	if($('#one').hasClass('remove')){
+// 		$('#one').toggleClass('remove');
+// 		$('#one').velocity('slideDown');
+// 		$('#openDiv').velocity({rotateX: -180}, 500)
 		
 		
 
-	} else {
-		$('#one').toggleClass('remove');
-		$('#one').velocity('slideUp');
+// 	} else {
+// 		$('#one').toggleClass('remove');
+// 		$('#one').velocity('slideUp');
 		
 		
-		$('#openDiv').velocity({rotateX: +180}, 500)
-	}
+// 		$('#openDiv').velocity({rotateX: +180}, 500)
+// 	}
 
-	if($('#two').hasClass('remove')){
+// 	if($('#two').hasClass('remove')){
 		
 		
-		$('#openDiv').velocity({rotateX: -180}, 500)
-		$('#two').toggleClass('remove');
-		$('#two').velocity('slideDown');
+// 		$('#openDiv').velocity({rotateX: -180}, 500)
+// 		$('#two').toggleClass('remove');
+// 		$('#two').velocity('slideDown');
 
-	} else {
+// 	} else {
 		
 		
-		$('#two').toggleClass('remove');
-		$('#two').velocity('slideUp');
-		$('#openDiv').velocity({rotateX: +180}, 500)
-	}
+// 		$('#two').toggleClass('remove');
+// 		$('#two').velocity('slideUp');
+// 		$('#openDiv').velocity({rotateX: +180}, 500)
+// 	}
 
 
 
-});
+// });
+
+
+	$('#openDiv').on('click', () => {
+		$('.contents-area').removeClass('remove');
+	});
+
 
 
 

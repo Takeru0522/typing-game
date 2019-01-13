@@ -88,31 +88,100 @@
 					</div>
 				</div>
 				<div class="wrap">
+
+
+
+<!-- const Slime = new Monster(1, 1000, 100, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_001.png', expArray[0], 'Slime');
+const KillerPanther = new Monster(2, 2000, 200, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_075.png', expArray[1], 'KillerPanther');
+const Kandata = new Monster(3, 3000, 300, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_200.png', expArray[2], 'Kandata'); // Boss1
+const Golem = new Monster(4, 4000, 400, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_123.png', expArray[3], 'Golem');
+const AkumaShinkan = new Monster(5, 5000, 500, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_155.png', expArray[4], 'AkumaShinkan');
+const MilledEarth = new Monster(6, 6000, 600, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_209.png', expArray[5], 'MilledEarth'); // Boss2
+const KillerMachine = new Monster(7, 7000, 700, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_164.png', expArray[6], 'KillerMachine');
+const Gigantes = new Monster(8, 8000, 800, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_169.png', expArray[7], 'Gigantes');
+const MilledEarthX = new Monster(9, 9000, 900, 'https://iso-labo.com/labo/images/dragon_quest/dq5/5_210.png', expArray[8], 'MilledEarthX'); // Boss3
+const Ryuoh = new Monster(10, 10000, 1000, 'https://iso-labo.com/labo/images/dragon_quest/boss/1-1_boss.png', expArray[9], 'Ryuoh'); -->
+
+
+
+
+
 				<!-- <h2>Adventure</h2> -->
 				<div class="contents-area">
 				<div class="contents">
-					<div class="open-game remove" id="one">1</div>
-					<div class="open-game remove" id="two">2</div>
+					<div class="open-game" id="one">
+						<p>Slime</p>
+						<p>HP:1000</p>
+						<p>AP:100</p>
+						<img class="slime" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_001.png">
+					</div>
+					<div class="open-game" id="two">
+						<p>KillerPanther</p>
+						<p>HP:2000</p>
+						<p>AP:200</p>
+						<img class="killerPanther" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_075.png">
+					</div>
 				</div>
 				<div class="contents">
-					<div class="open-game remove" id="three">3</div> <!-- Boss 1 -->
+					<div class="open-game boss" id="three">
+						<p>Kandata</p>
+						<p>HP:3000</p>
+						<p>AP:300</p>
+						<img class="kandata" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_200.png">
+					</div> <!-- Boss 1 -->
+
 				</div>
 				<div class="contents">
-					<div class="open-game remove" id="four">4</div>
-					<div class="open-game remove" id="five">5</div>
+					<div class="open-game" id="four">
+						<p>Golem</p>
+						<p>HP:4000</p>
+						<p>AP:400</p>
+						<img class="golem" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_123.png">
+					</div>
+					<div class="open-game" id="five">
+						<p>AkumaShinkan</p>
+						<p>HP:5000</p>
+						<p>AP:500</p>
+						<img class="akumashinkan" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_155.png">
+					</div>
 				</div>
 				<div class="contents">
-					<div class="open-game remove" id="six">6</div> <!-- Boss 2 -->
+					<div class="open-game boss" id="six">
+						<p>MilledEarth</p>
+						<p>HP:6000</p>
+						<p>AP:600</p>
+						<img class="milledearth" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_209.png">
+					</div> <!-- Boss 2 -->
 				</div>
 				<div class="contents">
-					<div class="open-game remove" id="seven">7</div>
-					<div class="open-game remove" id="eight">8</div>
+					<div class="open-game" id="seven">
+						<p>KillerMachine</p>
+						<p>HP:7000</p>
+						<p>AP:700</p>
+						<img class="killermachine" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_164.png">
+					</div>
+					<div class="open-game" id="eight">
+						<p>Gigantes</p>
+						<p>HP:8000</p>
+						<p>AP:800</p>
+						<img class="gigantes" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_169.png">
+					</div>
 				</div>
 				<div class="contents">
-					<div class="open-game remove" id="nine">9</div> <!-- Boss 3 -->
+					<div class="open-game boss" id="nine">
+						<p>MilledEarthX</p>
+						<p>HP:9000</p>
+						<p>AP:900</p>
+						<img class="milledearthX" src="https://iso-labo.com/labo/images/dragon_quest/dq5/5_210.png">
+					</div> <!-- Boss 3 -->
 				</div>
 				<div class="contents">
-					<div class="open-game remove" id="ten">10</div> <!-- Final Boss -->
+					<div class="open-game boss" id="ten">
+						<p>Ryuoh</p>
+						<p>HP:?????</p>
+						<p>AP:?????</p>
+						<img class="ryuoh" src="https://iso-labo.com/labo/images/dragon_quest/boss/1-1_boss.png">
+					</div> <!-- Final Boss -->
 				</div>
 				</div>
 				</div>
@@ -201,7 +270,13 @@
 							<img src="#">
 							<!-- https://iso-labo.com/labo/images/dragon_quest/dq2/dq2_r.png -->
 							<div class="result-textarea">
-								<p id="numOfwords">Score--- : </p>
+								<div class="exp-bar-wrapper">
+									<div class="exp-wrap">
+										<div class="exp-outer"></div>
+										<div class="exp-inner"></div>			
+									</div>	
+								</div>
+								<!-- <p id="numOfwords">Score--- : </p> -->
 								<p>Exp. </p>
 							</div>
 							<button id="after-btn">Close</button>

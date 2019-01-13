@@ -190,8 +190,13 @@ input {
 	width: 100%;
 	line-height: 7px;
 }
+
+.imgae-area {
+
+}
 .second-page img {
-	padding: 7px;
+	position: relative;
+	left: 170px;
 }
 .second-wrapper {
 	background-color: white;
@@ -376,7 +381,92 @@ input {
 	height: 100px;
 	width: 30vw;
 	border: 1px solid grey;
+	border-radius: 3px;
 
+}
+
+
+.open-game {
+
+}
+
+.open-game p {
+	padding-left: 3px;
+	z-index: 1;
+}
+
+.open-game img {
+
+	
+	z-index: ;
+}
+
+.slime {
+	position: relative;
+	top: -54px;
+	left: 176px;
+}
+
+
+.killerPanther {
+	position: relative;
+	top: -130px;
+	left: 225px;
+}
+.kandata {
+	position: relative;
+	top: -104px;
+	left: 142px;
+}
+.golem {
+	position: relative;
+	top: -116px;
+	left: 158px;
+}
+.akumashinkan {
+	position: relative;
+	top: -131px;
+	left: 188px;
+}
+.milledearth {
+	position: relative;
+	zoom: 67%;
+	top: -172px;
+	left: 296px;
+}
+.killermachine {
+	position: relative;
+	top: -122px;
+	left: 227px;
+}
+.gigantes {
+	position: relative;
+	top: -145px;
+	left: 181px;
+}
+.milledearthX {
+	position: relative;
+	top: -176px;
+	left: 208px;
+}
+.ryuoh {
+	position: relative;
+	top: -126px;
+	left: 188px;
+}
+
+#nine {
+	margin-top: 100px;
+}
+
+#ten {
+	margin-top: 200px;
+	box-shadow: 0px 11px 120px 52px #1A0145, 0 0 44px 3px #1a0145 inset;
+	border: none;
+}
+
+.boss {
+	box-shadow: 0 0 20px #1A0145;
 }
 
 .game-modal {
@@ -387,7 +477,7 @@ input {
 	display: flex;
 	justify-content: center;
 	position: relative;
-	top: -93vh;
+	top: -143vh;
 
 }
 
@@ -455,8 +545,22 @@ input {
 	padding-top: -10px;
 }
 
+.result-textarea {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 
+}
 
+.result-textarea .exp-bar-wrapper {
+	border: 1px solid white;
+	height: 16px;
+	width: 120px;
+	position: relative;
+	top: 50px;
+	left: 100px;
+}
 
 
 footer {
