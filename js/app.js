@@ -163,7 +163,7 @@ render();
 
 
 
-
+// doesn't work
 $('.open-game').on('click', () => {
 	$('before-monster-img').attr('src', currentMonster.img);
 })
@@ -463,10 +463,22 @@ $(document).on('keypress', typing); // console shows error when I type
 
 
 $('.open-game').on('click', () => {
-	$('.game-modal').toggleClass('remove'); //  + game-modal
+	$('.modal-bg').toggleClass('remove');
+	$('.game-modal').toggleClass('remove'); //  + game-modal	
 	$('.before-game').toggleClass('remove'); //  + before-game modal
 	render(); // Idk if I need this.
 })
+
+// $('.open-game').on('click', () => {
+// 	console.log('oooops');
+// 	$('.game-modal').fadeIn('slow');
+// 	$('.modal-bg').fadeIn('slow');
+// 	$('.modal-bg').toggleClass('remove');
+// 	$('.game-modal').toggleClass('remove'); //  + game-modal	
+// 	$('.before-game').toggleClass('remove'); //  + before-game modal
+// 	// $('.before-game').toggleClass('remove');
+
+// })
 
 
 
@@ -491,6 +503,7 @@ $('#game-btn').on('click', () => {
 $('#after-btn').on('click', () => {
 	$('.after-game').toggleClass('remove'); //  - after-game
 	$('.game-modal').toggleClass('remove');  //  - game-modal
+	$('.modal-bg').toggleClass('remove');
 	
 })
 
@@ -500,11 +513,13 @@ $('#after-btn').on('click', () => {
 $('#close-before-game').on('click', () => {
 	$('.before-game').toggleClass('remove');
 	$('.game-modal').toggleClass('remove');
+	$('.modal-bg').toggleClass('remove');
 })
 
 $('#close-game').on('click', () => {
 	$('.game').toggleClass('remove');
 	$('.game-modal').toggleClass('remove');
+	$('.modal-bg').toggleClass('remove');
 	render();
 		// console.log('closed before-game')
 		// 	console.log('The battle is closed.');
@@ -531,6 +546,7 @@ $('#close-game').on('click', () => {
 $('#close-after-game').on('click', () => {
 	$('.after-game').toggleClass('remove');
 	$('.game-modal').toggleClass('remove');
+	$('.modal-bg').toggleClass('remove');
 })
 
 
@@ -595,6 +611,35 @@ $('.back-p').on('click', () => {
 	$('#openDiv').on('click', () => {
 		$('.contents-area').removeClass('remove');
 	});
+
+
+
+
+
+
+
+
+
+
+// $(window).resize(modalResize);
+// function modalResize(){
+// 	let w = $(window).width();
+// 	let h = $(window).height();
+ 
+//     let cw = $("#modal-main").outerWidth();
+//     let ch = $("#modal-main").outerHeight();
+ 
+//         //取得した値をcssに追加する
+//     $(".game-modal").css({
+//         "left": ((w - cw)/2) + "px",
+//         "top": ((h - ch)/2) + "px"
+//     });
+// }
+
+
+
+
+
 
 
 
